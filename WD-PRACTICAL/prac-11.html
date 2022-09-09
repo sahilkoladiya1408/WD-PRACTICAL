@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT FORM</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 50px;
+        }
+
+        .form-part {
+            max-width: 50%;
+        }
+
+        .form-part form {
+            background-color: #f2f2f2;
+            padding: 30px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: flex-start;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .form-group>label {
+            width: 40%;
+            text-align: start;
+        }
+
+        .form-group>input {
+            flex-grow: 1;
+        }
+
+        input,
+        select {
+            padding: 5px;
+            outline: none;
+        }
+
+        input[type="radio"] {
+            height: 20px;
+            width: 20px;
+        }
+
+        .form-group:last-child>input {
+            background-color: rgb(131, 149, 239);
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            transition: all 0.3s linear;
+        }
+
+
+        .form-group:last-child>input:hover {
+            background-color: rgb(38, 80, 164);
+        }
+
+
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+            border: 1px solid rgb(48, 93, 198);
+            text-align: start;
+            padding: 20px 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-part">
+            <form action="#">
+                <div class="form-group">
+                    <label for="name">Name </label>
+                    <input type="text" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="mno">Mobile No </label>
+                    <input type="number" id="mno">
+                </div>
+                <div class="form-group">
+                    <label for="gen">Gender </label>
+                    <section>
+                        <input type="radio" id="male" value="Male" name="gen">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" value="Female" name="gen">
+                        <label for="female">Female</label>
+                    </section>
+                </div>
+                <div class="form-group">
+                    <label for="favc">Favourite Color </label>
+                    <select id="favc">
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Green">Green</option>
+                    </select>
+                </div>
+            </form>
+            <div class="form-group">
+                <input type="submit" onclick="displayData()">
+            </div>
+
+        </div>
+
+        <div id="display-part">
+            Data display here
+        </div>
+
+    </div>
+    <script>
+        let name = document.getElementById("name")
+        let email = document.getElementById("email")
+        let mno = document.getElementById("mno")
+        let favc = document.getElementById("favc")
+        let gen = document.getElementsByName("gen")
+
+
+        function gender() {
+            for (let ele of gen) {
+                if (ele.checked) {
+                    return ele.value;
+                }
+            }
+        }
+
+        let display = document.getElementById("display-part");
+
+
+        function displayData(e) {
+
+
+            display.innerHTML = `
+<table>
+                <tr>
+                    <th>Name</th>
+                    <td>${name.value}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>${email.value}</td>
+                </tr>
+                <tr>
+                    <th>Mobiile No</th>
+                    <td>${mno.value}</td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>${gender()}</td>
+                </tr>
+                <tr>
+                    <th>Favourite Color</th>
+                    <td>${favc.value}</td>
+                </tr>
+            </table>
+`;
+
+
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

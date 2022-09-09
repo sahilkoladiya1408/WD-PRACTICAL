@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODD & EVEN NUMBER</title>
+
+    <style>
+        *{
+            font-size: 1.1em;
+        }
+        .container{
+            width: 40%;
+            border: 3px solid black;
+            margin: 9em auto;
+            padding: 3em 3em 3em 8em;
+            border-radius: 5px;
+            background-color: lightgray;
+        }
+        input{
+            border-radius: 10px;
+            margin-top: 1em;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <label for="inum">Enter Number :</label>
+        <input type="number" id="num"><br>
+        <input type="button" onClick="OddEven()" value="Enter">
+        <p>
+            <label for="result">Result : </label>
+            <span id="result"></span>
+        </p>
+    </div>
+
+    <script>
+        function OddEven() {
+            num = document.getElementById("num").value;
+            let a = parseInt(num);
+            if (a % 2 == 0) {
+                document.getElementById("result").innerHTML = a + " is Even"
+            }
+            else{
+                document.getElementById("result").innerHTML = a + " is Odd"
+            }
+        }
+    </script>
+</body>
+</html>
