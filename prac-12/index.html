@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Koladiya - CONTACT FORM</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-part">
+            <form action="#">
+                <div class="form-group">
+                    <label for="name">Name </label>
+                    <input type="text" id="name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email </label>
+                    <input type="email" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="mno">Mobile No </label>
+                    <input type="number" id="mno">
+                </div>
+                <div class="form-group">
+                    <label for="gen">Gender </label>
+                    <section>
+                        <input type="radio" id="male" value="Male" name="gen" checked>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" value="Female" name="gen">
+                        <label for="female">Female</label>
+                    </section>
+                </div>
+                <div class="form-group">
+                    <label for="favc">Favourite Color </label>
+                    <select id="favc">
+                        <option value="Red" selected>Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Green">Green</option>
+                    </select>
+                </div>
+            </form>
+            <div class="form-group">
+                <input type="submit" onclick="checkForm()">
+            </div>
+
+        </div>
+
+        <div id="display-part">
+            Data display here
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+
+
+
+
+</body>
+
+</html>
